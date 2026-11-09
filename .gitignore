@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+
+# Environment files and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Build output
+dist/
+build/
+coverage/
+
+# Logs
+*.log
+
+# Editor and system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local database files
+*.bson
+*.archive
+dump/
+/backend/createAdmin.js
+/backend/resetAdminPassword.js

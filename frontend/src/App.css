@@ -1,0 +1,61 @@
+
+/* =========================================
+   LUXURYSTAY - APP CSS
+   Clean Global App Layout
+========================================= */
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+/* Main Application */
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Images */
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Buttons */
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+/* Links */
+
+a {
+  text-decoration: none;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  #root {
+    overflow-x: hidden;
+  }
+}

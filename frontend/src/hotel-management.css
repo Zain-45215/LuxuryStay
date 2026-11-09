@@ -1,0 +1,496 @@
+.hm {
+  --hm-ink: #302b24;
+  --hm-muted: #756d61;
+  --hm-line: #e7dfd2;
+  --hm-paper: #fffdf9;
+  --hm-gold: #98753e;
+  --hm-sand: #e6d5b4;
+
+  color: var(--hm-ink);
+  font-family: Arial, sans-serif;
+  width: 100%;
+  min-width: 0;
+}
+
+.hm *,
+.hm *::before,
+.hm *::after {
+  box-sizing: border-box;
+}
+
+.hm .hm-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.hm .hm-eyebrow {
+  display: block;
+  color: var(--hm-gold);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  line-height: 1.6;
+}
+
+.hm h1 {
+  margin: 10px 0;
+  font: 40px/1.15 Georgia, serif;
+  color: var(--hm-ink);
+}
+
+.hm h2 {
+  margin: 6px 0 0;
+  color: var(--hm-ink);
+  font: 26px/1.2 Georgia, serif;
+}
+
+.hm .hm-heading p {
+  margin: 0;
+  color: var(--hm-muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.hm .hm-total {
+  min-width: 140px;
+  padding: 20px 26px;
+  border: 1px solid var(--hm-line);
+  border-radius: 14px;
+  background: #eee5d5;
+}
+
+.hm .hm-total strong {
+  display: block;
+  font: 34px/1.1 Georgia, serif;
+}
+
+.hm .hm-total span {
+  display: block;
+  margin-top: 8px;
+  font-size: 12px;
+  color: #65563f;
+}
+
+.hm .hm-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.hm .hm-panel {
+  min-width: 0;
+  padding: 24px;
+  border: 1px solid var(--hm-line);
+  border-radius: 16px;
+  background: var(--hm-paper);
+}
+
+.hm .hm-form-panel {
+  scroll-margin-top: 110px;
+}
+
+.hm .hm-panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 24px;
+}
+
+.hm .hm-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  min-height: 42px;
+  padding: 11px 16px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font: 600 12px/1.4 Arial, sans-serif;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 160ms ease, border-color 160ms ease;
+}
+
+.hm .hm-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.hm .hm-secondary {
+  color: #59482e;
+  background: #f3ecdf;
+  border-color: #e5d9c3;
+}
+
+.hm .hm-secondary:hover:not(:disabled) {
+  background: #e9dcc4;
+  border-color: #cdb88e;
+}
+
+.hm .hm-primary {
+  width: 100%;
+  min-height: 49px;
+  margin-top: 8px;
+  background: #29251f;
+  color: #fff5e4;
+  border-color: #29251f;
+}
+
+.hm .hm-primary:hover:not(:disabled) {
+  background: #4c3c26;
+  border-color: #4c3c26;
+}
+
+.hm :is(button, input, select, textarea):focus-visible {
+  outline: 3px solid #aa8750;
+  outline-offset: 3px;
+}
+
+.hm .hm-hotel-list {
+  display: grid;
+  gap: 22px;
+}
+
+.hm .hm-hotel {
+  overflow: hidden;
+  border: 1px solid var(--hm-line);
+  border-radius: 12px;
+  background: #fffefa;
+}
+
+.hm .hm-image-wrap {
+  position: relative;
+  height: 210px;
+  background: #e9e1d4;
+}
+
+.hm .hm-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hm .hm-photo-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 12px;
+  background: linear-gradient(135deg, #eee6d8, #ddd0b9);
+  color: #705b38;
+}
+
+.hm .hm-photo-placeholder > span {
+  display: grid;
+  place-items: center;
+  width: 55px;
+  height: 65px;
+  border: 1px solid #b39665;
+  border-radius: 28px 28px 0 0;
+  font: 36px Georgia, serif;
+}
+
+.hm .hm-photo-placeholder small {
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.hm .hm-status {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  padding: 7px 12px;
+  border-radius: 30px;
+  background: #eff7ed;
+  color: #315837;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.hm .hm-status.is-inactive {
+  color: #675239;
+  background: #f1e4cf;
+}
+
+.hm .hm-hotel-body {
+  padding: 22px;
+}
+
+.hm .hm-hotel h3 {
+  margin: 7px 0;
+  color: var(--hm-ink);
+  font: 25px/1.2 Georgia, serif;
+  overflow-wrap: anywhere;
+}
+
+.hm .hm-hotel p {
+  margin: 7px 0;
+  color: var(--hm-muted);
+  font-size: 13px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.hm .hm-hotel .hm-address,
+.hm .hm-hotel .hm-contact {
+  font-size: 12px;
+}
+
+.hm .hm-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 16px 0 20px;
+}
+
+.hm .hm-tags span {
+  padding: 6px 9px;
+  background: #f4efe6;
+  border-radius: 5px;
+  color: #6f614c;
+  font-size: 10px;
+}
+
+.hm fieldset {
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.hm .hm-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 17px;
+}
+
+.hm .hm-wide {
+  grid-column: 1 / -1;
+}
+
+.hm label {
+  display: block;
+  margin: 0;
+  color: #514838;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.hm input,
+.hm select,
+.hm textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 45px;
+  margin-top: 8px;
+  padding: 12px;
+  border: 1px solid #ded4c4;
+  border-radius: 7px;
+  background: #fffefa;
+  color: #302b24;
+  font: 13px/1.5 Arial, sans-serif;
+}
+
+.hm textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.hm .hm-upload {
+  margin-bottom: 22px;
+  overflow: hidden;
+  border: 1px dashed #cdbb9b;
+  border-radius: 11px;
+  background: #f9f5ed;
+}
+
+.hm .hm-upload > .hm-photo {
+  height: 220px;
+}
+
+.hm .hm-upload-empty {
+  display: grid;
+  justify-items: center;
+  padding: 28px 18px 16px;
+  text-align: center;
+}
+
+.hm .hm-upload-empty > span {
+  display: grid;
+  place-items: center;
+  width: 45px;
+  height: 45px;
+  margin-bottom: 14px;
+  border-radius: 50%;
+  background: #e8dbc3;
+  color: #705630;
+  font-size: 27px;
+}
+
+.hm .hm-upload-empty strong {
+  font: 20px/1.4 Georgia, serif;
+}
+
+.hm .hm-upload-empty p,
+.hm .hm-upload-controls p {
+  color: var(--hm-muted);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.hm .hm-upload-controls {
+  padding: 17px;
+}
+
+.hm input[type="file"] {
+  font-size: 11px;
+  padding: 8px;
+  background: #fffdf8;
+}
+
+.hm input[type="file"]::file-selector-button {
+  padding: 9px 12px;
+  margin-right: 10px;
+  border: 0;
+  border-radius: 5px;
+  background: #e6d5b4;
+  color: #423622;
+  cursor: pointer;
+}
+
+.hm .hm-hint {
+  margin: 18px 0;
+  color: var(--hm-muted);
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.hm .hm-alert {
+  margin-bottom: 20px;
+  padding: 14px 16px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  font-size: 13px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.hm .hm-error {
+  background: #fff0eb;
+  border-color: #f0c8bb;
+  color: #843c2c;
+}
+
+.hm .hm-success {
+  background: #edf5e9;
+  border-color: #d3e2c9;
+  color: #3f6136;
+}
+
+.hm .hm-empty {
+  padding: 42px 20px;
+  text-align: center;
+  border: 1px dashed var(--hm-line);
+  border-radius: 10px;
+  background: #faf7f0;
+  color: var(--hm-muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.hm .hm-empty strong {
+  display: block;
+  color: var(--hm-ink);
+  font: 23px Georgia, serif;
+}
+
+.hm .hm-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--hm-line);
+  color: var(--hm-muted);
+  font-size: 11px;
+}
+
+.hm .hm-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 1150px) {
+  .hm .hm-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .hm .hm-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .hm h1 {
+    font-size: 33px;
+  }
+
+  .hm .hm-total {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    padding: 16px 20px;
+  }
+
+  .hm .hm-total span {
+    margin: 0;
+  }
+
+  .hm .hm-panel {
+    padding: 18px;
+  }
+
+  .hm .hm-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .hm .hm-image-wrap {
+    height: 190px;
+  }
+
+  .hm .hm-hotel-body {
+    padding: 18px;
+  }
+
+  .hm .hm-panel-heading {
+    align-items: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hm .hm-button {
+    transition: none;
+  }
+}
